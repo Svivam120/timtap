@@ -1,0 +1,131 @@
+{
+  "name": "TimeTap - Mobile Workforce Management",
+  "short_name": "TimeTap",
+  "description": "Professional time tracking and team management app optimized for mobile devices",
+  "start_url": "https://timetap.app/mobile-index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "scope": "https://timetap.app/",
+  "lang": "en",
+  "categories": ["productivity", "business", "utilities"],
+  "prefer_related_applications": false,
+  "display_override": ["standalone", "minimal-ui"],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik05NiA0OEM3My45MDg2IDQ4IDU2IDY1LjkwODYgNTYgODhWMTQ0QzU2IDE2Ni4wOTEgNzMuOTA4NiAxODQgOTYgMTg0QzExOC4wOTEgMTg0IDEzNiAxNjYuMDkxIDEzNiAxNDRWODhDMTM2IDY1LjkwODYgMTE4LjA5MSA0OCA5NiA0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik05NiA2NEM4MS42NDA2IDY0IDcwIDc1LjY0MDYgNzAgOTBWMTA2QzcwIDEyMC4zNTkgODEuNjQwNiAxMzIgOTYgMTMyQzExMC4zNTkgMTMyIDEyMiAxMjAuMzU5IDEyMiAxMDZWOTBDMTIyIDc1LjY0MDYgMTEwLjM1OSA2NCA5NiA2NFoiIGZpbGw9IiM2MzY2ZjEiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxO3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMGI5ODE7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4QzE5Ny4wNzQgMTI4IDE0NCAxODEuMDc0IDE0NCAyNDBWMzg0QzE0NCA0NDIuOTI2IDE5Ny4wNzQgNDk2IDI1NiA0OTZDMzE0LjkyNiA0OTYgMzY4IDQ0Mi45MjYgMzY4IDM4NFYyNDBDMzY4IDE4MS4wNzQgMzE0LjkyNiAxMjggMjU2IDEyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNTYgMTcwQzIxNy43NzQgMTcwIDE4NiAyMDEuNzc0IDE4NiAyNDBWMzAwQzE4NiAzNDIuMjI2IDIxNy43NzQgMzc0IDI1NiAzNzRDMjk0LjIyNiAzNzQgMzI2IDM0Mi4yMjYgMzI2IDMwNFYyNDBDMzI2IDIwMS43NzQgMjk0LjIyNiAxNzAgMjU2IDE3MFoiIGZpbGw9IiM2MzY2ZjEiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxO3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMGI5ODE7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMzYiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik05MCA0NEM3NC41MzYgNDQgNjIgNTYuNTM2IDYyIDcyVjEwOEM2MiAxMjMuNDY0IDc0LjUzNiAxMzYgOTAgMTM2QzEwNS40NjQgMTM2IDExOCAxMjMuNDY0IDExOCAxMDhWNzJDMTE4IDU2LjUzNiAxMDUuNDY0IDQ0IDkwIDQ0WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxO3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMGI5ODE7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjgxMiIgdmlld0JveD0iMCAwIDM3NSA4MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNzUiIGhlaWdodD0iODEyIiByeD0iMjAiIGZpbGw9IiMwMDAiLz4KPHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMzM1IiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjNjM2NmYxIi8+Cjx0ZXh0IHg9IjE4Ny41IiB5PSI3MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VGltZVRhcDwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjE0MCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSIxODcuNSIgeT0iMTkwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DbG9jayBJbjwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjI2MCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzYzNjZmMSIvPgo8dGV4dCB4PSIxODcuNSIgeT0iMzEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UZWFtIENoYXQ8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSIzODAiIHdpZHRoPSIzMzUiIGhlaWdodD0iMTAwIiByeD0iMTAiIGZpbGw9IiMxMGI5ODEiLz4KPHRleHQgeD0iMTg3LjUiIHk9IjQzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q2FsY3VsYXRvcjwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjUwMCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzYzNjZmMSIvPgo8dGV4dCB4PSIxODcuNSIgeT0iNTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TY2hlZHVsZTwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjYyMCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSIxODcuNSIgeT0iNjcwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UaGVtZTwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjczMCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSIxODcuNSIgeT0iNzgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Nb2JpbGUgT3B0aW1pemVkPC90ZXh0Pgo8L3N2Zz4=",
+      "sizes": "375x812",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiByeD0iNDAiIGZpbGw9IiMwMDAiLz4KPHJlY3QgeD0iNDAiIHk9IjQwIiB3aWR0aD0iNzIwIiBoZWlnaHQ9IjEyMCIgcng9IjIwIiBmaWxsPSIjNjM2NmYxIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UaW1lVGFwPC90ZXh0Pgo8cmVjdCB4PSI0MCIgeT0iMTgwIiB3aWR0aD0iMzUwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjMTBiOTgxIi8+Cjx0ZXh0IHg9IjIxNSIgeT0iMjQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DbG9jayBJbjwvdGV4dD4KPHJlY3QgeD0iNDEwIiB5PSIxODAiIHdpZHRoPSIzNTAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiM2MzY2ZjEiLz4KPHRleHQgeD0iNTg1IiB5PSIyNDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRlYW0gQ2hhdDwvdGV4dD4KPHJlY3QgeD0iNDAiIHk9IjMwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSIyMTUiIHk9IjM2MCIgZm9udC1mYWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DYWxjdWxhdG9yPC90ZXh0Pgo8cmVjdCB4PSI0MTAiIHk9IjMwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzYzNjZmMSIvPgo8dGV4dCB4PSI1ODUiIHk9IjM2MCIgZm9udC1mYWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TY2hlZHVsZTwvdGV4dD4KPHJlY3QgeD0iNDAiIHk9IjQyMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSIyMTUiIHk9IjQ4MCIgZm9udC1mYWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UaGVtZTwvdGV4dD4KPHJlY3QgeD0iNDEwIiB5PSI0MjAiIHdpZHRoPSIzNTAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiM2MzY2ZjEiLz4KPHRleHQgeD0iNTg1IiB5PSI0ODAiIGZvbnQtZmFmaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1vYmlsZSBPcHRpbWl6ZWQ8L3RleHQ+Cjwvc3ZnPg==",
+      "sizes": "800x600",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Clock In",
+      "short_name": "Clock In",
+      "description": "Quick clock in for work",
+      "url": "https://timetap.app/mobile-index.html?action=clockin",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeXg9IjQ4IiBjeT0iNDgiIHI9IjQ0IiBmaWxsPSIjMTBiOTgxIi8+CjxwYXRoIGQ9Ik00OCAyNFY0OEwzNiA2MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Team Chat",
+      "short_name": "Chat",
+      "description": "Quick access to team messages",
+      "url": "https://timetap.app/mobile-index.html?action=chat",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMTIiIHk9IjIwIiB3aWR0aD0iNzIiIGhlaWdodD0iNTYiIHJ4PSI4IiBmaWxsPSIjNjM2NmYxIi8+CjxjaXJjbGUgY3g9IjI4IiBjeT0iMzYiIHI9IjQiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjQ4IiBjeT0iMzYiIHI9IjQiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjY4IiBjeT0iMzYiIHI9IjQiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Team Dashboard",
+      "short_name": "Team",
+      "description": "View team status and members",
+      "url": "https://timetap.app/mobile-index.html?action=team",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iNDQiIGZpbGw9IiM2MzY2ZjEiLz4KPHBhdGggZD0iTTI0IDQ4QzI0IDM0LjE5MiAzNC4xOTIgMjQgNDggMjRDNjEuODA4IDI0IDcyIDM0LjE5MiA3MiA0OEM3MiA2MS44MDggNjEuODA4IDcyIDQ4IDcyQzM0LjE5MiA3MiAyNCA2MS44MDggMjQgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDggMzJDMzkuMTY0IDMyIDMyIDM5LjE2NCAzMiA0OEMzMiA1Ni44MzYgMzkuMTY0IDY0IDQ4IDY0QzU2LjgzNiA2NCA2NCA1Ni44MzYgNjQgNDhDNjQgMzkuMTY0IDU2LjgzNiAzMiA0OCAzMloiIGZpbGw9IiM2MzY2ZjEiLz4KPC9zdmc+",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Work Schedule",
+      "short_name": "Schedule",
+      "description": "View and manage work schedules",
+      "url": "https://timetap.app/mobile-index.html?action=schedule",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMTIiIHk9IjEyIiB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHJ4PSI4IiBmaWxsPSIjMTBiOTgxIi8+CjxwYXRoIGQ9Ik0yNCAyNEgyOFYyOEgyNFYyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNiAyNEg0MFYyOEgzNlYyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OCAyNEg1MlYyOEg0OFYyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNCAzNkgyOFY0MEgyNFYzNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNiAzNkg0MFY0MEgzNlYzNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OCAzNkg1MlY0MEg0OFYzNloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "web+timetap",
+      "url": "https://timetap.app/mobile-index.html?action=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "https://timetap.app/mobile-index.html",
+      "accept": {
+        "text/csv": [".csv"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "https://timetap.app/mobile-index.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

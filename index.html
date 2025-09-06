@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTap - Smart Workforce Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TimeTap">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo-icon-wrapper">
+                        <i class="fas fa-stopwatch logo-icon"></i>
+                        <div class="logo-pulse"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>TimeTap</h1>
+                        <span class="logo-tagline">Smart Workforce Management</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb" id="themeToggleThumb">
+                            <i class="fas fa-sun theme-icon sun-icon"></i>
+                            <i class="fas fa-moon theme-icon moon-icon"></i>
+                        </div>
+                    </div>
+                    <span class="theme-label" id="themeLabel">Auto</span>
+                </div>
+                <div class="datetime-display">
+                    <div class="current-date" id="currentDate"></div>
+                    <div class="current-time" id="currentTime"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Clock Section -->
+            <section class="clock-section">
+                <div class="clock-display">
+                    <div class="digital-clock" id="digitalClock"></div>
+                    <div class="clock-date" id="clockDate"></div>
+                </div>
+                
+                <div class="employee-selection">
+                    <div class="employee-selector-header">
+                        <h3><i class="fas fa-users"></i> Team Member</h3>
+                        <div class="team-status">
+                            <span class="online-count" id="onlineCount">0</span>
+                            <span class="status-text">online</span>
+                        </div>
+                    </div>
+                    <div class="employee-dropdown-container">
+                        <select id="employeeSelect" class="enhanced-select">
+                            <option value="">Choose your profile...</option>
+                        </select>
+                        <div class="employee-preview" id="employeePreview">
+                            <div class="preview-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="preview-info">
+                                <div class="preview-name">Select Employee</div>
+                                <div class="preview-status">Choose from team</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-employee-btn" id="addEmployeeBtn">
+                        <i class="fas fa-user-plus"></i> Add Team Member
+                    </button>
+                </div>
+
+                <div class="clock-buttons">
+                    <button class="clock-btn clock-in" id="clockInBtn" disabled>
+                        <i class="fas fa-play"></i>
+                        Clock In
+                    </button>
+                    <button class="clock-btn clock-out" id="clockOutBtn" disabled>
+                        <i class="fas fa-stop"></i>
+                        Clock Out
+                    </button>
+                </div>
+
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-text">Select an employee to begin</span>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section class="dashboard-section">
+                <div class="dashboard-header">
+                    <h2>Employee Dashboard</h2>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" id="exportBtn">
+                            <i class="fas fa-download"></i> Export CSV
+                        </button>
+                        <button class="action-btn" id="clearDataBtn">
+                            <i class="fas fa-trash"></i> Clear Data
+                        </button>
+                        <button class="action-btn" id="calculatorToggle">
+                            <i class="fas fa-calculator"></i> Calculator
+                        </button>
+                        <button class="action-btn" id="calendarToggle">
+                            <i class="fas fa-calendar-alt"></i> Calendar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="employee-grid" id="employeeGrid">
+                    <!-- Employee cards will be dynamically generated -->
+                </div>
+
+                <div class="activity-log">
+                    <h3>Today's Activity Log</h3>
+                    <div class="log-container" id="activityLog">
+                        <!-- Activity entries will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculator Section -->
+            <section class="calculator-section" id="calculatorSection">
+                <div class="calculator-header">
+                    <h2>Calculator</h2>
+                    <button class="close-calculator" id="closeCalculator">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <div class="display-history" id="calculatorHistory"></div>
+                        <div class="display-current" id="calculatorDisplay">0</div>
+                    </div>
+                    
+                    <div class="calculator-buttons">
+                        <button class="calc-btn calc-btn-clear" data-action="clear">C</button>
+                        <button class="calc-btn calc-btn-clear" data-action="clear-entry">CE</button>
+                        <button class="calc-btn calc-btn-operation" data-action="backspace">⌫</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="/">÷</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="7">7</button>
+                        <button class="calc-btn calc-btn-number" data-number="8">8</button>
+                        <button class="calc-btn calc-btn-number" data-number="9">9</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="*">×</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="4">4</button>
+                        <button class="calc-btn calc-btn-number" data-number="5">5</button>
+                        <button class="calc-btn calc-btn-number" data-number="6">6</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="-">−</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="1">1</button>
+                        <button class="calc-btn calc-btn-number" data-number="2">2</button>
+                        <button class="calc-btn calc-btn-number" data-number="3">3</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="+">+</button>
+                        
+                        <button class="calc-btn calc-btn-number calc-btn-zero" data-number="0">0</button>
+                        <button class="calc-btn calc-btn-number" data-action="decimal">.</button>
+                        <button class="calc-btn calc-btn-equals" data-action="equals">=</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section class="calendar-section" id="calendarSection">
+                <div class="calendar-header">
+                    <h2>Work Schedule Calendar</h2>
+                    <div class="calendar-controls">
+                        <button class="calendar-nav-btn" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="calendar-title" id="calendarTitle">
+                            <span id="currentMonthYear"></span>
+                        </div>
+                        <button class="calendar-nav-btn" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="calendar-today-btn" id="todayBtn">Today</button>
+                    </div>
+                    <button class="close-calendar" id="closeCalendar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="calendar-filters">
+                    <div class="filter-group">
+                        <label>Filter by Employee:</label>
+                        <select id="calendarEmployeeFilter" class="filter-select">
+                            <option value="">All Employees</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>View:</label>
+                        <select id="calendarViewType" class="filter-select">
+                            <option value="month">Month View</option>
+                            <option value="week">Week View</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot working"></span>
+                        <span>Working</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot partial"></span>
+                        <span>Partial Day</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot off"></span>
+                        <span>Off/No Data</span>
+                    </div>
+                </div>
+                
+                <div class="calendar-container">
+                    <div class="calendar-grid" id="calendarGrid">
+                        <div class="calendar-weekdays">
+                            <div class="weekday">Sun</div>
+                            <div class="weekday">Mon</div>
+                            <div class="weekday">Tue</div>
+                            <div class="weekday">Wed</div>
+                            <div class="weekday">Thu</div>
+                            <div class="weekday">Fri</div>
+                            <div class="weekday">Sat</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays">
+                            <!-- Calendar days will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-sidebar" id="calendarSidebar">
+                    <h3 id="selectedDateTitle">Select a date</h3>
+                    <div class="date-employees" id="dateEmployees">
+                        <!-- Employee work details for selected date -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Messaging Section -->
+            <section class="messaging-section" id="messagingSection">
+                <div class="messaging-header">
+                    <h2><i class="fas fa-comments"></i> Team Messages</h2>
+                                    <div class="messaging-controls">
+                    <div class="message-management">
+                        <button class="clear-all-btn" id="clearAllMessages" title="Clear all messages">
+                            <i class="fas fa-trash"></i>
+                            Clear All
+                        </button>
+                        <button class="export-btn" id="exportMessages" title="Export messages">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                    <button class="refresh-btn" id="refreshMessages">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <div class="message-count">
+                        <span id="messageCount">0</span> messages
+                    </div>
+                </div>
+                </div>
+
+                <div class="messaging-container">
+                    <div class="messages-display" id="messagesDisplay">
+                        <div class="welcome-message">
+                            <i class="fas fa-comments"></i>
+                            <h3>Welcome to Team Chat!</h3>
+                            <p>Leave messages for your teammates here. Messages are visible to everyone on the team.</p>
+                        </div>
+                        <!-- Messages will be dynamically generated -->
+                    </div>
+
+                    <div class="message-compose">
+                        <div class="compose-header">
+                            <div class="sender-info" id="senderInfo">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Select your profile to send messages</span>
+                            </div>
+                        </div>
+                        <div class="compose-form">
+                            <textarea 
+                                id="messageInput" 
+                                placeholder="Type your message to the team..."
+                                rows="3"
+                                disabled
+                            ></textarea>
+                            <div class="compose-actions">
+                                <div class="message-options">
+                                    <label class="priority-label">
+                                        <input type="checkbox" id="priorityMessage">
+                                        <i class="fas fa-exclamation"></i> Priority
+                                    </label>
+                                </div>
+                                <button class="send-btn" id="sendMessageBtn" disabled>
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Employee Modal -->
+    <div class="modal" id="addEmployeeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Employee</h3>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="employeeName">Full Name:</label>
+                    <input type="text" id="employeeName" placeholder="Enter employee name" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">Employee ID:</label>
+                    <input type="text" id="employeeId" placeholder="Enter employee ID" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveEmployeeBtn">Add Employee</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-content schedule-modal">
+            <div class="modal-header">
+                <h3 id="scheduleModalTitle">Add Schedule</h3>
+                <button class="close-btn" id="closeScheduleModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="scheduleEmployee">Employee:</label>
+                    <select id="scheduleEmployee" class="form-select" required>
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="scheduleDate">Date:</label>
+                    <input type="date" id="scheduleDate" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="scheduleStartTime">Start Time:</label>
+                        <input type="time" id="scheduleStartTime" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleEndTime">End Time:</label>
+                        <input type="time" id="scheduleEndTime" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="scheduleType">Schedule Type:</label>
+                    <select id="scheduleType" class="form-select">
+                        <option value="work">Regular Work</option>
+                        <option value="overtime">Overtime</option>
+                        <option value="meeting">Meeting</option>
+                        <option value="training">Training</option>
+                        <option value="off">Day Off</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="scheduleNotes">Notes (Optional):</label>
+                    <textarea id="scheduleNotes" class="form-textarea" placeholder="Add any notes or details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="scheduleRecurring">
+                        <span class="checkmark"></span>
+                        Recurring Schedule
+                    </label>
+                </div>
+                <div class="recurring-options" id="recurringOptions" style="display: none;">
+                    <div class="form-group">
+                        <label for="recurringType">Repeat:</label>
+                        <select id="recurringType" class="form-select">
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recurringEnd">End Date:</label>
+                        <input type="date" id="recurringEnd" class="form-input">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelScheduleBtn">Cancel</button>
+                <button class="btn btn-danger" id="deleteScheduleBtn" style="display: none;">Delete</button>
+                <button class="btn btn-primary" id="saveScheduleBtn">Save Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-text"></span>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

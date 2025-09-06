@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TimeTap">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
+    <title>TimeTap - Mobile Workforce Management</title>
+    
+    <!-- Mobile PWA Manifest -->
+    <link rel="manifest" href="mobile-manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMzYiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik05MCA0NEM3NC41MzYgNDQgNjIgNTYuNTM2IDYyIDcyVjEwOEM2MiAxMjMuNDY0IDc0LjUzNiAxMzYgOTAgMTM2QzEwNS40NjQgMTM2IDExOCAxMjMuNDY0IDExOCAxMDhWNzJDMTE4IDU2LjUzNiAxMDUuNDY0IDQ0IDkwIDQ0WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxO3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMGI5ODE7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+">
+    
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mobile-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Status Bar Spacer -->
+    <div class="status-bar-spacer"></div>
+    
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo-icon-wrapper">
+                        <i class="fas fa-stopwatch logo-icon"></i>
+                        <div class="logo-pulse"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>TimeTap</h1>
+                        <span class="logo-tagline">Mobile Workforce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb" id="themeToggleThumb">
+                            <i class="fas fa-sun theme-icon sun-icon"></i>
+                            <i class="fas fa-moon theme-icon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="datetime-display">
+                    <div class="current-time" id="currentTime"></div>
+                    <div class="current-date" id="currentDate"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Tabs -->
+    <nav class="mobile-nav">
+        <div class="nav-tab active" data-tab="clock">
+            <i class="fas fa-clock"></i>
+            <span>Clock</span>
+        </div>
+        <div class="nav-tab" data-tab="team">
+            <i class="fas fa-users"></i>
+            <span>Team</span>
+        </div>
+        <div class="nav-tab" data-tab="calendar">
+            <i class="fas fa-calendar"></i>
+            <span>Schedule</span>
+        </div>
+        <div class="nav-tab" data-tab="chat">
+            <i class="fas fa-comments"></i>
+            <span>Chat</span>
+        </div>
+        <div class="nav-tab" data-tab="tools">
+            <i class="fas fa-tools"></i>
+            <span>Tools</span>
+        </div>
+    </nav>
+
+    <!-- Mobile Content Areas -->
+    <main class="mobile-content">
+        <!-- Clock Tab -->
+        <section class="tab-content active" id="clock-tab">
+            <div class="clock-section">
+                <div class="clock-display">
+                    <div class="digital-clock" id="digitalClock"></div>
+                    <div class="clock-date" id="clockDate"></div>
+                </div>
+                
+                <div class="employee-selection">
+                    <div class="employee-selector-header">
+                        <h3><i class="fas fa-user"></i> Your Profile</h3>
+                        <div class="team-status">
+                            <span class="online-count" id="onlineCount">0</span>
+                            <span class="status-text">online</span>
+                        </div>
+                    </div>
+                    <div class="employee-dropdown-container">
+                        <select id="employeeSelect" class="enhanced-select">
+                            <option value="">Choose your profile...</option>
+                        </select>
+                        <div class="employee-preview" id="employeePreview">
+                            <div class="preview-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="preview-info">
+                                <div class="preview-name">Select Employee</div>
+                                <div class="preview-status">Choose from team</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-employee-btn" id="addEmployeeBtn">
+                        <i class="fas fa-user-plus"></i> Add Team Member
+                    </button>
+                </div>
+
+                <div class="clock-buttons">
+                    <button class="clock-btn clock-in" id="clockInBtn" disabled>
+                        <i class="fas fa-play"></i>
+                        Clock In
+                    </button>
+                    <button class="clock-btn clock-out" id="clockOutBtn" disabled>
+                        <i class="fas fa-stop"></i>
+                        Clock Out
+                    </button>
+                </div>
+
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-text">Select your profile to begin</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Tab -->
+        <section class="tab-content" id="team-tab">
+            <div class="team-section">
+                <div class="section-header">
+                    <h2>Team Dashboard</h2>
+                    <button class="refresh-btn" id="refreshTeam">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                
+                <div class="team-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="totalEmployees">0</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="workingNow">0</div>
+                            <div class="stat-label">Working Now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="employee-grid" id="employeeGrid">
+                    <!-- Employee cards will be dynamically generated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Tab -->
+        <section class="tab-content" id="calendar-tab">
+            <div class="calendar-section">
+                <div class="section-header">
+                    <h2>Work Schedule</h2>
+                    <div class="calendar-controls">
+                        <button class="calendar-nav-btn" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="calendar-title" id="calendarTitle">
+                            <span id="currentMonthYear"></span>
+                        </div>
+                        <button class="calendar-nav-btn" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar days will be dynamically generated -->
+                </div>
+
+                <div class="calendar-sidebar" id="calendarSidebar">
+                    <h3 id="selectedDateTitle">Select a date</h3>
+                    <div class="date-employees" id="dateEmployees">
+                        <!-- Employee work details for selected date -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Tab -->
+        <section class="tab-content" id="chat-tab">
+            <div class="chat-section">
+                <div class="section-header">
+                    <h2>Team Chat</h2>
+                    <div class="chat-controls">
+                        <button class="refresh-btn" id="refreshMessages">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <div class="message-count">
+                            <span id="messageCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="messages-display" id="messagesDisplay">
+                    <div class="welcome-message">
+                        <i class="fas fa-comments"></i>
+                        <h3>Welcome to Team Chat!</h3>
+                        <p>Leave messages for your teammates here.</p>
+                    </div>
+                </div>
+
+                <div class="message-compose">
+                    <div class="compose-form">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Type your message..."
+                            rows="3"
+                            disabled
+                        ></textarea>
+                        <div class="compose-actions">
+                            <label class="priority-label">
+                                <input type="checkbox" id="priorityMessage">
+                                <i class="fas fa-exclamation"></i> Priority
+                            </label>
+                            <button class="send-btn" id="sendMessageBtn" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Tab -->
+        <section class="tab-content" id="tools-tab">
+            <div class="tools-section">
+                <div class="section-header">
+                    <h2>Quick Tools</h2>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card" id="calculatorTool">
+                        <div class="tool-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Calculator</h3>
+                            <p>Quick calculations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card" id="exportTool">
+                        <div class="tool-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Export Data</h3>
+                            <p>Download reports</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card" id="settingsTool">
+                        <div class="tool-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h3>Settings</h3>
+                            <p>App preferences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="bottom-nav-spacer"></div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal" id="addEmployeeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Team Member</h3>
+                <button class="close-modal-btn" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="employeeName">Name:</label>
+                    <input type="text" id="employeeName" placeholder="Enter employee name">
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">ID:</label>
+                    <input type="text" id="employeeId" placeholder="Enter employee ID">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveEmployeeBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator Modal -->
+    <div class="modal" id="calculatorModal">
+        <div class="modal-content calculator-modal">
+            <div class="modal-header">
+                <h3>Calculator</h3>
+                <button class="close-modal-btn" id="closeCalculatorBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display" id="calculatorDisplay">0</div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn calc-btn-clear" data-action="clear">C</button>
+                        <button class="calc-btn calc-btn-clear" data-action="clearEntry">CE</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="/">÷</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="*">×</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="7">7</button>
+                        <button class="calc-btn calc-btn-number" data-number="8">8</button>
+                        <button class="calc-btn calc-btn-number" data-number="9">9</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="-">-</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="4">4</button>
+                        <button class="calc-btn calc-btn-number" data-number="5">5</button>
+                        <button class="calc-btn calc-btn-number" data-number="6">6</button>
+                        <button class="calc-btn calc-btn-operation" data-operation="+">+</button>
+                        
+                        <button class="calc-btn calc-btn-number" data-number="1">1</button>
+                        <button class="calc-btn calc-btn-number" data-number="2">2</button>
+                        <button class="calc-btn calc-btn-number" data-number="3">3</button>
+                        <button class="calc-btn calc-btn-equals" data-action="equals">=</button>
+                        
+                        <button class="calc-btn calc-btn-number calc-btn-zero" data-number="0">0</button>
+                        <button class="calc-btn calc-btn-number" data-action="decimal">.</button>
+                        <button class="calc-btn calc-btn-operation" data-action="backspace">
+                            <i class="fas fa-backspace"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="mobile-script.js"></script>
+</body>
+</html>
